@@ -41,6 +41,7 @@ public class ServletLogin extends HttpServlet {
             requestDispatcher.forward(request,response);
 
         }else{
+            //check if the user is invalid and set up an error message
             String error="invalidate credentials, please login again";
             request.setAttribute("error",error);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("index.jsp");
