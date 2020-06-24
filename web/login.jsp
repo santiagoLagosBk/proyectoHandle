@@ -15,6 +15,7 @@
     <%
         //Show the error if the credentials are incorrect
         if(request.getAttribute("error")!=null){%>
+
     <%= request.getAttribute("error")%><br>
     <%
         }

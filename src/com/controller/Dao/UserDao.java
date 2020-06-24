@@ -27,7 +27,7 @@ public class UserDao {
             ps=con.prepareStatement(sqlSerchUser);
             ps.setString(1,user.getUser());
             ps.setString(2,user.getPassword());
-
+            //Execute query
             rs=ps.executeQuery();
             Encript encript=new Encript();
             while (rs.next()){
