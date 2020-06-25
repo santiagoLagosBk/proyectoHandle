@@ -27,11 +27,10 @@ public class ServletLogin extends HttpServlet {
 
 
         User user1Ob=new User(user,pass);
-        Connection con=(Connection)getServletContext().getAttribute("connectionDb");
+        Connection con=(Connection)getServletContext().getAttribute("dbConnection");
 
         if(dao.Validate(user1Ob,con)){
             HttpSession sesion=request.getSession();
-
 
                 //set the username as an atribute
                 sesion.setAttribute("username",user);
