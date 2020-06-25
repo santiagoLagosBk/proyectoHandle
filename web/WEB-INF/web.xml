@@ -18,6 +18,10 @@
 
     </filter-mapping>
 
+    <listener>
+        <listener-class>com.controller.Listener.ListenerApp</listener-class>
+    </listener>
+
 
 
 </web-app>

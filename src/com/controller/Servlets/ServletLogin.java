@@ -27,9 +27,9 @@ public class ServletLogin extends HttpServlet {
 
 
         User user1Ob=new User(user,pass);
+        Connection con=(Connection)getServletContext().getAttribute("connectionDb");
 
-
-        if(dao.Validate(user1Ob)){
+        if(dao.Validate(user1Ob,con)){
             HttpSession sesion=request.getSession();
 
 
@@ -44,7 +44,7 @@ public class ServletLogin extends HttpServlet {
             //check if the user is invalid and set up an error message
             String error="invalidate credentials, please login again";
             request.setAttribute("error",error);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("login.jsp");
             requestDispatcher.forward(request,response);
 
 

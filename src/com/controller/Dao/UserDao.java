@@ -14,11 +14,11 @@ public class UserDao {
 
 
 
-    public Boolean Validate(User user){
+    public Boolean Validate(User user,Connection connection){
             boolean ref=false;
         try {
             //create elements needs to the db connection
-            Connection con= ConnectionDb.GetConnnection();
+            Connection con= connection;
             PreparedStatement ps;
             ResultSet rs;
             //Write the query for the database
